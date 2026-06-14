@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Python",
+        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+    },
+    {
+        "name": "LangChain",
+        "icon": "https://img.icons8.com/color/48/000000/artificial-intelligence.png"
+    },
+    {
+        "name": "LangGraph",
+        "icon": "https://img.icons8.com/color/48/000000/flow-chart.png"
+    },
+    {
+        "name": "RAG",
+        "icon": "https://img.icons8.com/color/48/000000/database-restore.png"
+    },
+    {
+        "name": "OpenAI API",
+        "icon": "https://img.icons8.com/color/48/000000/chatgpt.png"
+    },
+    {
+        "name": "Gemini",
+        "icon": "https://img.icons8.com/color/48/000000/google-logo.png"
+    },
+    {
+        "name": "Groq / LLaMA",
+        "icon": "https://img.icons8.com/color/48/000000/processor.png"
+    },
+    {
+        "name": "BERT",
+        "icon": "https://img.icons8.com/color/48/000000/natural-language.png"
+    },
+    {
+        "name": "FAISS",
+        "icon": "https://img.icons8.com/color/48/000000/search--v1.png"
+    },
+    {
+        "name": "Agentic AI",
+        "icon": "https://img.icons8.com/color/48/000000/bot.png"
+    },
+    {
+        "name": "TensorFlow",
+        "icon": "https://img.icons8.com/color/48/000000/tensorflow.png"
+    },
+    {
+        "name": "PyTorch",
+        "icon": "https://img.icons8.com/color/48/000000/pytorch.png"
+    },
+    {
+        "name": "Scikit-learn",
+        "icon": "https://img.icons8.com/color/48/000000/statistics.png"
+    },
+    {
+        "name": "FastAPI",
+        "icon": "https://img.icons8.com/color/48/000000/api-settings.png"
+    },
+    {
+        "name": "Streamlit",
+        "icon": "https://img.icons8.com/color/48/000000/monitor--v1.png"
+    },
+    {
+        "name": "Playwright",
+        "icon": "https://img.icons8.com/color/48/000000/test-tube.png"
+    },
+    {
+        "name": "OpenCV",
+        "icon": "https://img.icons8.com/color/48/000000/camera--v1.png"
+    },
+    {
+        "name": "NumPy / Pandas",
+        "icon": "https://img.icons8.com/color/48/000000/numpy.png"
+    },
+    {
+        "name": "MySQL",
+        "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+    },
+    {
+        "name": "SQLite",
+        "icon": "https://img.icons8.com/color/48/000000/sql.png"
+    },
+    {
+        "name": "SQLAlchemy",
+        "icon": "https://img.icons8.com/color/48/000000/database.png"
+    },
+    {
+        "name": "Git",
+        "icon": "https://img.icons8.com/color/48/000000/git.png"
+    },
+    {
+        "name": "GitHub",
+        "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
+    },
+    {
+        "name": "Power BI",
+        "icon": "https://img.icons8.com/color/48/000000/power-bi.png"
+    },
+    {
+        "name": "NLP",
+        "icon": "https://img.icons8.com/color/48/000000/communication--v1.png"
+    },
+    {
+        "name": "Web Scraping",
+        "icon": "https://img.icons8.com/color/48/000000/spider-web.png"
+    }
+]

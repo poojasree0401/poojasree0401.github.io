@@ -1,0 +1,9 @@
+# Personal information file - keep locally only
+Github_Charanteja_Abbavathini.md
+
+# Zone.Identifier files (Windows download metadata)
+*.Identifier
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,62 @@
+﻿[
+  {
+    "name": "TruthTrail — Agentic AI Fact-Checking",
+    "desc": "A production-grade fact-checking platform where 7 specialized AI agents collaborate: Decomposer → Research → Credibility → Evidence Filter → Conflict Detector → Judge → Result. 3-layer cache (exact-match, FAISS semantic, TTL) and auto-refresh for dynamic claims every 24h. Gemini-powered with FastAPI backend and Streamlit UI.",
+    "image": "ai.jpg",
+    "category": "ai",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "DocuMind AI — Document Intelligence",
+    "desc": "A full-featured document Q&A system combining BM25 lexical search with FAISS semantic search for hybrid retrieval. Multi-session memory persisted to SQLite via SQLAlchemy. Powered by LangChain + Groq/LLaMA for fast inference. Supports multiple PDF uploads and persistent chat history.",
+    "image": "ai.jpg",
+    "category": "ai",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "OpenAI Invoice Automation System",
+    "desc": "A fully headless automation pipeline that watches the OpenAI billing dashboard, scrapes all new invoice links using Playwright, downloads the PDFs, and dispatches them via SMTP to all stakeholders. Eliminates ~45 mins/month of manual billing overhead.",
+    "image": "ai.jpg",
+    "category": "automation",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Legal Document Processing & Automation",
+    "desc": "End-to-end pipeline that navigates a legal document portal using Playwright, applies date-range and document-type filters, handles multi-page pagination, and downloads case PDFs. OpenAI extracts total payable fee and key case details from each PDF, auto-writing structured data to Excel. 98% extraction accuracy.",
+    "image": "ai.jpg",
+    "category": "automation",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "NEXORA — Next-Gen Career Intelligence Platform",
+    "desc": "Full-stack AI recruitment platform bridging job seekers and recruiters. Candidates get BERT-powered ATS scores, skill gap analysis with LIME, and personalized learning paths. Recruiters manage postings and screen candidates via an HR dashboard. Built on Streamlit, MySQL, PyPDF2, Cosine Similarity. College Major Project.",
+    "image": "ai.jpg",
+    "category": "ml",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "PCB Defect Detection — Ensemble Learning",
+    "desc": "AI-powered quality inspection system that identifies PCB defects (micro-cracks, soldering issues, scratches, missing components) using an ensemble of XceptionNet (91.2%) + InceptionV3 (89.7%) achieving 94.1% combined accuracy. Tkinter desktop app with real-time defect visualization and bounding boxes. College Minor Project.",
+    "image": "ai.jpg",
+    "category": "ml",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  }
+]

@@ -188,28 +188,6 @@ function showProjects(projects) {
 fetchData('skills').then(showSkills).catch(function() {});
 fetchData('projects').then(showProjects).catch(function() {});
 
-// ===== CONTACT FORM (mailto fallback) =====
-(function() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var name    = (form.querySelector('[name="name"]') || {}).value || '';
-    var email   = (form.querySelector('[name="email"]') || {}).value || '';
-    var phone   = (form.querySelector('[name="phone"]') || {}).value || '';
-    var message = (form.querySelector('[name="message"]') || {}).value || '';
-    var subject = encodeURIComponent('Portfolio Enquiry from ' + name);
-    var body    = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      (phone ? 'Phone: ' + phone + '\n' : '') +
-      '\nMessage:\n' + message
-    );
-    window.location.href = 'mailto:poojasree.abb01@gmail.com?subject=' + subject + '&body=' + body;
-    form.reset();
-  });
-})();
-
 // ===== TAB VISIBILITY =====
 document.addEventListener('visibilitychange', function() {
   document.title = document.visibilityState === 'visible'

@@ -210,14 +210,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .card-mail a:hover { opacity: 0.7; }
 
 /* ===== SKILLS MARQUEE ===== */
-.sec-skills { overflow: hidden; }
-.marquee-wrap { position: relative; }
+.sec-skills { overflow: hidden; touch-action: pan-y; }
+.marquee-wrap { position: relative; touch-action: pan-y; }
 .fade-l,.fade-r { position: absolute; top: 0; bottom: 0; width: 12%; z-index: 2; pointer-events: none; }
 .fade-l { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
 .fade-r { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
 .mrow { display: flex; gap: 0.75rem; width: max-content; margin-bottom: 0.75rem; animation: marquee-fwd 35s linear infinite; touch-action: pan-y; }
 .mrow-reverse { animation: marquee-rev 28s linear infinite; touch-action: pan-y; }
 .mrow:hover, .mrow-reverse:hover { animation-play-state: paused; }
+.skill-pill { touch-action: pan-y; }
 .skill-pill { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.6rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; font-size: 0.875rem; color: var(--text2); white-space: nowrap; font-weight: 500; transition: all 0.25s; cursor: default; }
 .skill-pill:hover { border-color: var(--accent); color: var(--text); background: var(--accent-dim); }
 .skill-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }

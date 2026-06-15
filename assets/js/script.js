@@ -1,232 +1,225 @@
-$(document).ready(function () {
+/* ================================================
+   POOJASREE PORTFOLIO — Main JavaScript 2026
+   ================================================ */
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+// ===== CURSOR GLOW =====
+(function() {
+  const glow = document.getElementById('cursorGlow');
+  if (!glow) return;
+  document.addEventListener('mousemove', function(e) {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top  = e.clientY + 'px';
+  });
+})();
+
+// ===== NAVBAR =====
+(function() {
+  const nav     = document.getElementById('topnav');
+  const menu    = document.getElementById('navMenu');
+  const scrollTopBtn = document.getElementById('scroll-top');
+
+  // hamburger toggle
+  if (menu && nav) {
+    menu.addEventListener('click', function() {
+      nav.classList.toggle('open');
     });
+  }
 
-    $(window).on('scroll load', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+  // close menu when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (nav) nav.classList.remove('open');
+    });
+  });
 
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
+  window.addEventListener('scroll', function() {
+    // scrolled class for navbar
+    if (nav) {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }
+
+    // scroll-top button
+    if (scrollTopBtn) {
+      scrollTopBtn.classList.toggle('active', window.scrollY > 400);
+    }
+
+    // nav link active highlight (scroll spy)
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY  = window.scrollY + 120;
+    sections.forEach(function(sec) {
+      const top    = sec.offsetTop;
+      const height = sec.offsetHeight;
+      const id     = sec.getAttribute('id');
+      const link   = document.querySelector('.nav-links a[href="#' + id + '"]');
+      if (link) {
+        if (scrollY >= top && scrollY < top + height) {
+          document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+          link.classList.add('active');
         }
-
-        // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
-        });
+      }
     });
+  });
 
-    // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
+  // smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
         e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
+  });
+})();
 
-    // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
-        emailjs.init("oJhZjb8mr7R2KMdRs");
-
-        emailjs.sendForm('service_h51au3j', 'oJhZjb8mr7R2KMdRs', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
-        event.preventDefault();
+// ===== SCROLL REVEAL =====
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-    // <!-- emailjs to mail contact form data -->
+  }, { threshold: 0.12 });
+  reveals.forEach(function(el) { obs.observe(el); });
+})();
 
-});
-
-document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "PoojaSree Abbavathini - Portfolio";
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-        }
-    });
-
-
-// <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: ["agentic AI systems", "RAG pipelines", "Python automation", "LangChain applications", "generative AI solutions"],
+// ===== TYPED.JS =====
+(function() {
+  if (typeof Typed === 'undefined') return;
+  new Typed('.typing-text', {
+    strings: ['agentic AI systems', 'RAG pipelines', 'Python automation', 'LangChain applications', 'generative AI solutions'],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
-    backDelay: 500,
-});
-// <!-- typed js effect ends -->
+    backDelay: 1200,
+  });
+})();
 
-async function fetchData(type = "skills") {
-    let response
-    type === "skills" ?
-        response = await fetch("skills.json")
-        :
-        response = await fetch("./projects/projects.json")
-    const data = await response.json();
-    return data;
+// ===== DATA FETCH =====
+async function fetchData(type) {
+  const url  = type === 'projects' ? './projects/projects.json' : './skills.json';
+  const resp = await fetch(url);
+  return resp.json();
 }
 
+// ===== SKILLS MARQUEE =====
 function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        skillHTML += `
-        <div class="bar">
-              <div class="info">
-                <img src=${skill.icon} alt="skill" />
-                <span>${skill.name}</span>
-              </div>
-            </div>`
-    });
-    skillsContainer.innerHTML = skillHTML;
+  const row1 = document.getElementById('skillsRow1');
+  const row2 = document.getElementById('skillsRow2');
+  if (!row1 || !row2) return;
+
+  const half  = Math.ceil(skills.length / 2);
+  const set1  = skills.slice(0, half);
+  const set2  = skills.slice(half);
+
+  function makePill(name) {
+    return '<span class="skill-pill"><span class="skill-dot"></span>' + name + '</span>';
+  }
+
+  // duplicate for seamless infinite scroll
+  row1.innerHTML = [...set1, ...set1].map(function(s) { return makePill(s.name); }).join('');
+  row2.innerHTML = [...set2, ...set2].map(function(s) { return makePill(s.name); }).join('');
 }
 
+// ===== PROJECTS GRID =====
 function showProjects(projects) {
-    let projectsContainer = document.querySelector("#work .box-container");
-    let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-        </div>
-      </div>
-    </div>`
+  const container = document.getElementById('workContainer');
+  if (!container) return;
+
+  const gradients = [
+    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
+    'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    'linear-gradient(135deg, #f953c6 0%, #b91d73 100%)',
+    'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
+    'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
+  ];
+
+  const catMap = {
+    ai:         '&#129504; AI System',
+    automation: '&#9889; Automation',
+    ml:         '&#128202; ML / Deep Learning',
+    android:    '&#128241; Mobile App',
+  };
+
+  const html = projects.slice(0, 6).map(function(proj, i) {
+    const cat   = catMap[proj.category] || '&#128187; Project';
+    const title = proj.name.split('—')[0].trim();
+    const grad  = gradients[i % gradients.length];
+
+    const liveLink = (proj.links && proj.links.view && proj.links.view !== '#')
+      ? '<a href="' + proj.links.view + '" target="_blank" rel="noopener" class="proj-link">Live <i class="fas fa-external-link-alt"></i></a>'
+      : '';
+    const codeLink = (proj.links && proj.links.code && proj.links.code !== '#')
+      ? '<a href="' + proj.links.code + '" target="_blank" rel="noopener" class="proj-link">Code <i class="fab fa-github"></i></a>'
+      : '';
+    const wipTag = (!liveLink && !codeLink)
+      ? '<span class="proj-wip">In Development</span>'
+      : '';
+
+    return '<div class="proj-card reveal">' +
+      '<div class="proj-header" style="background:' + grad + '">' +
+        '<span class="proj-cat">' + cat + '</span>' +
+        '<h3>' + title + '</h3>' +
+      '</div>' +
+      '<div class="proj-body"><p>' + proj.desc + '</p></div>' +
+      '<div class="proj-footer">' + liveLink + codeLink + wipTag + '</div>' +
+    '</div>';
+  }).join('');
+
+  container.innerHTML = html || '<p style="color:var(--text2);text-align:center;padding:3rem;">No projects yet.</p>';
+
+  // re-run reveal observer for newly added cards
+  const newCards = container.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-    projectsContainer.innerHTML = projectHTML;
-
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
-    // <!-- tilt js effect ends -->
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
-
+  }, { threshold: 0.1 });
+  newCards.forEach(function(el) { obs.observe(el); });
 }
 
-fetchData().then(data => {
-    showSkills(data);
+// ===== INIT =====
+fetchData('skills').then(showSkills).catch(function() {});
+fetchData('projects').then(showProjects).catch(function() {});
+
+// ===== CONTACT FORM (EmailJS) =====
+(function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (typeof emailjs === 'undefined') {
+      alert('Email service not loaded. Please try again later.');
+      return;
+    }
+    emailjs.init('oJhZjb8mr7R2KMdRs');
+    emailjs.sendForm('service_h51au3j', 'oJhZjb8mr7R2KMdRs', '#contact-form')
+      .then(function() {
+        form.reset();
+        alert('Message sent successfully!');
+      }, function(err) {
+        console.error(err);
+        alert('Failed to send. Please try again.');
+      });
+  });
+})();
+
+// ===== TAB VISIBILITY =====
+document.addEventListener('visibilitychange', function() {
+  document.title = document.visibilityState === 'visible'
+    ? 'PoojaSree Abbavathini — AI Engineer'
+    : 'Come Back 👋';
 });
 
-fetchData("projects").then(data => {
-    showProjects(data);
+// ===== DISABLE DEVTOOLS SHORTCUTS =====
+document.addEventListener('keydown', function(e) {
+  if (e.keyCode === 123) return false;
+  if (e.ctrlKey && e.shiftKey && ['I','C','J'].includes(String.fromCharCode(e.keyCode))) return false;
+  if (e.ctrlKey && e.keyCode === 85) return false;
 });
-
-// <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
-// <!-- tilt js effect ends -->
-
-
-// pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
-// pre loader end
-
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
-
-
-/* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
-});
-
-/* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
-
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
-srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
-
-/* SCROLL ABOUT */
-srtop.reveal('.about .content h3', { delay: 200 });
-srtop.reveal('.about .content .tag', { delay: 200 });
-srtop.reveal('.about .content p', { delay: 200 });
-srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .content .resumebtn', { delay: 200 });
-
-
-/* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
-
-/* SCROLL EDUCATION */
-srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
-
-/* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
-
-/* SCROLL CONTACT */
-srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });

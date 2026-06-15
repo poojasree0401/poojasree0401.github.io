@@ -4,182 +4,212 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="poojasree abbavathini, portfolio, ai engineer, python developer, gen ai, langchain, agentic ai, personal portfolio" />
-    <meta name="description" content="Welcome to PoojaSree's Portfolio. AI Engineer specializing in Agentic AI, RAG, LangChain, and Python-based automation" />
-    <!-- Custom CSS -->
+    <meta name="keywords" content="poojasree abbavathini, portfolio, ai engineer, python developer, gen ai, langchain, agentic ai" />
+    <meta name="description" content="PoojaSree Abbavathini - AI Engineer specializing in Agentic AI, RAG, LangChain, and Python automation." />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>PoojaSree Abbavathini - Portfolio</title>
+    <title>PoojaSree Abbavathini - AI Engineer</title>
 </head>
 <body oncontextmenu="return false">
 
-<!-- pre loader -->
-<!-- <div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
-</div> -->
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-<!-- navbar starts -->
-<header>
-        <a href="/" class="logo"><i class="fas fa-brain"></i> PoojaSree Abbavathini</a>
+<nav class="topnav" id="topnav">
+    <a href="/" class="nav-logo">PS<span>.</span></a>
+    <button class="nav-menu" id="navMenu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me <i class="fas fa-arrow-right"></i></a>
+</nav>
 
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
-
-
-<!-- hero section starts -->
-<section class="home" id="home">
-    <div id="particles-js"></div>
-    <div class="content">
-      <p class="greeting">Hello, World!</p>
-      <h2>I'm <span>PoojaSree</span><br/>Abbavathini</h2>
-      <p class="typing-line">I build <span class="typing-text"></span></p>
-      <div class="hero-btns">
-        <a href="#about" class="btn-primary-hero">About Me <i class="fas fa-arrow-down"></i></a>
-        <a href="#contact" class="btn-outline-hero">Hire Me <i class="fas fa-paper-plane"></i></a>
-      </div>
-      <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/poojasree-abbavathini" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="github" aria-label="GitHub" href="https://github.com/poojasree0401" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="email" aria-label="Email" href="mailto:poojasree.abb01@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
-        </ul>
-      </div>
-    </div>
-</section>
-<!-- hero section ends -->
-
-
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-astronaut"></i> About <span>Me</span></h2>
-    <div class="about-grid">
-      <div class="avatar-card">
-        <div class="avatar-visual">
-          <i class="fas fa-user-tie"></i>
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Open to Opportunities &nbsp;&middot;&nbsp; Hyderabad, India</span>
         </div>
-        <span class="avatar-badge"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
-        <span class="avatar-badge"><i class="fas fa-brain"></i> AI Engineer</span>
-      </div>
-      <div class="about-content">
-        <h3>PoojaSree Abbavathini</h3>
-        <p class="role"><i class="fas fa-code"></i> AI Engineer &amp; Python Developer</p>
-        <p>I am an AI Engineer based in Hyderabad, India. I hold a B.Tech in Computer Science (Data Science) from Sreyas Institute of Engineering &amp; Technology. I am passionate about building intelligent, production-ready AI systems that solve real-world problems. I specialize in Agentic AI, Retrieval-Augmented Generation (RAG), LangChain, and Python-based automation pipelines. Previously an AI Engineer Intern at Wisdom Square Technologies.</p>
-        <div class="info-chips">
-          <span class="chip"><i class="fas fa-envelope"></i> poojasree.abb01@gmail.com</span>
-          <span class="chip"><i class="fas fa-graduation-cap"></i> B.Tech — CS (Data Science)</span>
-          <span class="chip"><i class="fas fa-briefcase"></i> Open to Opportunities</span>
+        <h1 class="hero-name">
+            <span class="line-one">Pooja</span>
+            <span class="line-two">Sree<span class="accent-dot">.</span></span>
+        </h1>
+        <p class="hero-sub">AI Engineer &amp; Python Developer &mdash; I build <span class="typing-text"></span></p>
+        <div class="hero-actions">
+            <a href="#work" class="btn-fill">View My Work</a>
+            <a href="#contact" class="btn-outline">Let&apos;s Connect <i class="fas fa-arrow-right"></i></a>
         </div>
-      </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-<!-- skills section starts -->
-<section class="skills" id="skills">
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills &amp; <span>Abilities</span></h2>
-    <p class="section-subtitle">Technologies and tools I work with</p>
-    <div class="container">
-      <div class="row" id="skillsContainer"></div>
-    </div>
-</section>
-<!-- skills section ends -->
-
-
-<!-- education section starts -->
-<section class="education" id="education">
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-  <p class="qoute">"Education is not the learning of facts, but the training of the mind to think."</p>
-  <div class="edu-timeline">
-    <div class="edu-item">
-      <div class="edu-icon"><i class="fas fa-university"></i></div>
-      <div class="edu-card">
-        <h3>B.Tech — Computer Science (Data Science)</h3>
-        <p>Sreyas Institute of Engineering &amp; Technology, Hyderabad</p>
-        <span class="edu-meta"><i class="fas fa-calendar-alt"></i> 2021 – 2025 &nbsp;|&nbsp; CGPA: 7.3</span>
-      </div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-icon"><i class="fas fa-school"></i></div>
-      <div class="edu-card">
-        <h3>Intermediate — MPC</h3>
-        <p>Sri Gayatri Junior College, Hyderabad</p>
-        <span class="edu-meta"><i class="fas fa-calendar-alt"></i> 2019 – 2021 &nbsp;|&nbsp; Score: 84%</span>
-      </div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-icon"><i class="fas fa-book"></i></div>
-      <div class="edu-card">
-        <h3>Secondary School Certificate (SSC)</h3>
-        <p>Globe The School, Hyderabad</p>
-        <span class="edu-meta"><i class="fas fa-calendar-alt"></i> 2019 &nbsp;|&nbsp; CGPA: 8.5</span>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- education section ends -->
-
-
-<!-- work project section starts -->
-<section class="work" id="work">
-  <h2 class="heading"><i class="fas fa-rocket"></i> Projects <span>Made</span></h2>
-  <div class="work-grid" id="workContainer">
-    <div class="empty-state">
-      <i class="fas fa-code-branch"></i>
-      <p>Projects loading... or visit the projects page to see all work.</p>
-    </div>
-  </div>
-  <div class="viewall">
-    <a href="/projects" class="btn"><i class="fas fa-th-large"></i> <span>View All Projects</span></a>
-  </div>
-</section>
-<!-- work project section ends -->
-
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-
-  <div class="timeline">
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Wisdom Square Technologies</h2>
+        <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/poojasree-abbavathini" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/poojasree0401" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:poojasree.abb01@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
-        <div class="desc">
-            <h3>AI Engineer Intern</h3>
-            <p>Sep 2025 - Dec 2025</p>
-        </div>
-      </div>
     </div>
-
-  </div>
-
-  <div class="morebtn">
-    <a href="/experience" class="btn"><span>View All</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div>
-
-</div>
-
+    <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-bar"></div>
+    </div>
+    <div class="float-chip c1"><i class="fas fa-bolt"></i> LangChain</div>
+    <div class="float-chip c2"><i class="fas fa-brain"></i> Agentic AI</div>
+    <div class="float-chip c3"><i class="fas fa-search"></i> RAG</div>
 </section>
-<!-- experience section ends -->
 
-<!-- contact section starts -->
+<section class="sec-about" id="about">
+    <div class="sec-header">
+        <span class="sec-num">01</span>
+        <div>
+            <p class="sec-tag">Who I Am</p>
+            <h2 class="sec-title">The Mind<br>Behind the Code</h2>
+        </div>
+    </div>
+    <div class="bento-grid">
+        <div class="bcard card-bio reveal">
+            <h3>Hello, I'm PoojaSree Abbavathini</h3>
+            <p>AI Engineer based in Hyderabad, India. I build intelligent, production-ready systems &mdash; from multi-agent AI pipelines and RAG architectures to Python automation that eliminates manual workflows. I specialize in making AI actually work at scale, not just in demos.</p>
+            <div class="bio-chips">
+                <span>LangChain</span><span>RAG</span><span>LangGraph</span><span>FastAPI</span><span>Streamlit</span>
+            </div>
+        </div>
+        <div class="bcard card-status reveal">
+            <div class="status-ring"></div>
+            <h3>Open to<br>Opportunities</h3>
+            <p>Full-time &middot; Contract &middot; Remote</p>
+        </div>
+        <div class="bcard card-stat reveal">
+            <span class="stat-big">6+</span>
+            <span class="stat-label">AI Projects<br>Shipped</span>
+        </div>
+        <div class="bcard card-role reveal">
+            <div class="role-icon-box"><i class="fas fa-brain"></i></div>
+            <div>
+                <h3>AI Engineer</h3>
+                <p>Agentic AI &amp; Production ML Systems</p>
+            </div>
+        </div>
+        <div class="bcard card-edu reveal">
+            <i class="fas fa-graduation-cap bcard-icon-top"></i>
+            <h3>B.Tech CS</h3>
+            <p>Data Science &middot; 2025</p>
+            <span>Sreyas Institute, Hyderabad</span>
+        </div>
+        <div class="bcard card-mail reveal">
+            <i class="fas fa-envelope bcard-icon-top"></i>
+            <a href="mailto:poojasree.abb01@gmail.com">poojasree.abb01<br>@gmail.com</a>
+        </div>
+    </div>
+</section>
+
+<section class="sec-skills" id="skills">
+    <div class="sec-header">
+        <span class="sec-num">02</span>
+        <div>
+            <p class="sec-tag">Tech Stack</p>
+            <h2 class="sec-title">What I<br>Work With</h2>
+        </div>
+    </div>
+    <div class="marquee-wrap">
+        <div class="fade-l" aria-hidden="true"></div>
+        <div class="fade-r" aria-hidden="true"></div>
+        <div class="mrow" id="skillsRow1"></div>
+        <div class="mrow mrow-reverse" id="skillsRow2"></div>
+    </div>
+</section>
+
+<section class="sec-education" id="education">
+    <div class="sec-header">
+        <span class="sec-num">03</span>
+        <div>
+            <p class="sec-tag">Background</p>
+            <h2 class="sec-title">Academic<br>Journey</h2>
+        </div>
+    </div>
+    <div class="edu-list">
+        <div class="edu-row reveal">
+            <div class="edu-idx">01</div>
+            <div class="edu-body">
+                <span class="edu-period">2021 &ndash; 2025</span>
+                <h3>B.Tech &mdash; Computer Science (Data Science)</h3>
+                <p>Sreyas Institute of Engineering &amp; Technology, Hyderabad</p>
+                <span class="edu-pill">CGPA: 7.3</span>
+            </div>
+            <i class="fas fa-arrow-right edu-arrow"></i>
+        </div>
+        <div class="edu-row reveal">
+            <div class="edu-idx">02</div>
+            <div class="edu-body">
+                <span class="edu-period">2019 &ndash; 2021</span>
+                <h3>Intermediate &mdash; MPC</h3>
+                <p>Sri Gayatri Junior College, Hyderabad</p>
+                <span class="edu-pill">Score: 84%</span>
+            </div>
+            <i class="fas fa-arrow-right edu-arrow"></i>
+        </div>
+        <div class="edu-row reveal">
+            <div class="edu-idx">03</div>
+            <div class="edu-body">
+                <span class="edu-period">2019</span>
+                <h3>Secondary School Certificate (SSC)</h3>
+                <p>Globe The School, Hyderabad</p>
+                <span class="edu-pill">CGPA: 8.5</span>
+            </div>
+            <i class="fas fa-arrow-right edu-arrow"></i>
+        </div>
+    </div>
+</section>
+
+<section class="sec-work" id="work">
+    <div class="sec-header">
+        <span class="sec-num">04</span>
+        <div>
+            <p class="sec-tag">Portfolio</p>
+            <h2 class="sec-title">Featured<br>Projects</h2>
+        </div>
+    </div>
+    <div class="proj-grid" id="workContainer"></div>
+    <div class="view-wrap">
+        <a href="/projects" class="view-btn">View All Projects <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<section class="sec-experience" id="experience">
+    <div class="sec-header">
+        <span class="sec-num">05</span>
+        <div>
+            <p class="sec-tag">Career</p>
+            <h2 class="sec-title">Work<br>Experience</h2>
+        </div>
+    </div>
+    <div class="exp-list">
+        <div class="exp-row reveal">
+            <div class="exp-logo"><i class="fas fa-building"></i></div>
+            <div class="exp-content">
+                <h3>AI Engineer Intern</h3>
+                <p class="exp-company">Wisdom Square Technologies</p>
+                <ul class="exp-points">
+                    <li>Built production-grade agentic AI systems using LangChain &amp; LangGraph</li>
+                    <li>Developed RAG pipelines with FAISS + BM25 hybrid retrieval</li>
+                    <li>Automated invoice &amp; legal document processing via Playwright pipelines</li>
+                    <li>Reduced manual billing workflows by 45+ minutes per month</li>
+                </ul>
+            </div>
+            <div class="exp-meta">
+                <span class="exp-date">Sep &ndash; Dec 2025</span>
+                <span class="exp-badge">Internship</span>
+            </div>
+        </div>
+    </div>
+    <div class="view-wrap">
+        <a href="/experience" class="view-btn">View Full Experience <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
 <section class="contact" id="contact">
   <h2 class="heading"><i class="fas fa-satellite-dish"></i> Get in <span>Touch</span></h2>
   <div class="contact-wrapper">
@@ -192,15 +222,15 @@
       <div class="form-group">
         <div class="field">
           <input type="text" name="name" placeholder="Your Name" required>
-          <i class='fas fa-user'></i>
+          <i class="fas fa-user"></i>
         </div>
         <div class="field">
           <input type="text" name="email" placeholder="Your Email" required>
-          <i class='fas fa-envelope'></i>
+          <i class="fas fa-envelope"></i>
         </div>
         <div class="field">
           <input type="text" name="phone" placeholder="Phone (optional)">
-          <i class='fas fa-phone-alt'></i>
+          <i class="fas fa-phone-alt"></i>
         </div>
         <div class="message">
           <textarea placeholder="Your Message" name="message" required></textarea>
@@ -213,76 +243,36 @@
     </form>
   </div>
 </section>
-<!-- contact section ends -->
 
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <span class="f-logo">PS<span>.</span></span>
+            <p>Designing AI systems that don&apos;t just work &mdash; they think.</p>
+        </div>
+        <div class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#work">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/poojasree-abbavathini" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/poojasree0401" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:poojasree.abb01@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 PoojaSree Abbavathini &nbsp;&middot;&nbsp; Built with passion, shipped with purpose.</span>
+    </div>
+</footer>
 
-<!-- footer section starts -->
-<section class="footer">
+<a href="#home" id="scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
-  <div class="box-container">
-
-      <div class="box">
-          <h3>PoojaSree's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Building 🚀 <br/> <br/> I don't just write code — I build intelligence. Every project I ship solves a real problem. 🧠</p>
-      </div>
-
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> projects</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>Available on LinkedIn</p>
-          <p> <i class="fas fa-envelope"></i>poojasree.abb01@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Hyderabad, India</p>
-          <div class="share">
-
-              <a href="https://www.linkedin.com/in/poojasree-abbavathini" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/poojasree0401" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:poojasree.abb01@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-          </div>
-      </div>
-  </div>
-
-</section>
-<!-- footer section ends -->
-
-
-<!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
-
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- typed.js cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
-
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="./assets/js/script.js"></script>
 
 </body>

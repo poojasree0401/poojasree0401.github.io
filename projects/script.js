@@ -1,118 +1,75 @@
-$(document).ready(function () {
+/* Projects Page Script */
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
-
-    $(window).on('scroll load', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
-        }
-    });
+// scroll-top
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('scroll-top');
+  if (btn) btn.classList.toggle('active', window.scrollY > 300);
 });
 
-document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "PoojaSree Abbavathini - Portfolio";
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-        }
-    });
+// reveal
+(function() {
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+})();
 
+// filter
+let allProjects = [];
+const catMap = { ai: '&#129504; AI System', automation: '&#9889; Automation', ml: '&#128202; ML / Deep Learning', android: '&#128241; Mobile App' };
+const gradients = [
+  'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+  'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
+  'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+  'linear-gradient(135deg, #f953c6 0%, #b91d73 100%)',
+  'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
+  'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
+];
 
-// fetch projects start
-function getProjects() {
-    return fetch("projects.json")
-        .then(response => response.json())
-        .then(data => {
-            return data
-        });
+function renderProjects(projects) {
+  const container = document.getElementById('projectsContainer');
+  if (!container) return;
+  container.innerHTML = projects.map(function(proj, i) {
+    const cat   = catMap[proj.category] || '&#128187; Project';
+    const title = proj.name.split('\u2014')[0].trim();
+    const grad  = gradients[i % gradients.length];
+    const live  = (proj.links && proj.links.view && proj.links.view !== '#') ? '<a href="' + proj.links.view + '" target="_blank" rel="noopener" class="proj-link">Live <i class="fas fa-external-link-alt"></i></a>' : '';
+    const code  = (proj.links && proj.links.code && proj.links.code !== '#') ? '<a href="' + proj.links.code + '" target="_blank" rel="noopener" class="proj-link">Code <i class="fab fa-github"></i></a>' : '';
+    const wip   = (!live && !code) ? '<span class="proj-wip">In Development</span>' : '';
+    return '<div class="proj-card reveal" data-cat="' + proj.category + '">' +
+      '<div class="proj-header" style="background:' + grad + '">' +
+        '<span class="proj-cat">' + cat + '</span>' +
+        '<h3>' + title + '</h3>' +
+      '</div>' +
+      '<div class="proj-body"><p>' + proj.desc + '</p></div>' +
+      '<div class="proj-footer">' + live + code + wip + '</div>' +
+    '</div>';
+  }).join('') || '<p style="color:var(--text2);padding:3rem;text-align:center;grid-column:1/-1;">No projects found.</p>';
+
+  // re-observe for reveal
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  container.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
 }
 
+// filter buttons
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    const filtered = filter === 'all' ? allProjects : allProjects.filter(function(p) { return p.category === filter; });
+    renderProjects(filtered);
+  });
+});
 
-function showProjects(projects) {
-    let projectsContainer = document.querySelector(".work .box-container");
-    let projectsHTML = "";
-    projects.forEach(project => {
-        projectsHTML += `
-        <div class="grid-item ${project.category}">
-        <div class="box tilt" style="width: 380px; margin: 1rem">
-      <img draggable="false" src="/assets/images/projects/${project.image}" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-        </div>
-      </div>
-    </div>
-    </div>`
-    });
-    projectsContainer.innerHTML = projectsHTML;
+// load
+fetch('./projects.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) { allProjects = data; renderProjects(data); })
+  .catch(function() {});
 
-    // vanilla tilt.js
-    // VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    //     max: 20,
-    // });
-    // // vanilla tilt.js  
-
-    // /* ===== SCROLL REVEAL ANIMATION ===== */
-    // const srtop = ScrollReveal({
-    //     origin: 'bottom',
-    //     distance: '80px',
-    //     duration: 1000,
-    //     reset: true
-    // });
-
-    // /* SCROLL PROJECTS */
-    // srtop.reveal('.work .box', { interval: 200 });
-
-    // isotope filter products
-    var $grid = $('.box-container').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
-        masonry: {
-            columnWidth: 200
-        }
-    });
-
-    // filter items on button click
-    $('.button-group').on('click', 'button', function () {
-        $('.button-group').find('.is-checked').removeClass('is-checked');
-        $(this).addClass('is-checked');
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-    });
-}
-
-getProjects().then(data => {
-    showProjects(data);
-})
-// fetch projects end
-
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
+document.addEventListener('visibilitychange', function() {
+  document.title = document.visibilityState === 'visible' ? 'Projects - PoojaSree Abbavathini' : 'Come Back!';
+});

@@ -224,7 +224,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* ===== EDUCATION ===== */
 .edu-list { display: flex; flex-direction: column; }
-.edu-row { display: grid; grid-template-columns: 72px 1fr 44px; align-items: center; gap: 2rem; padding: 2.25rem 1rem; border-bottom: 1px solid var(--border); cursor: default; transition: background 0.3s, padding 0.3s, border-radius 0.3s; }
+.edu-row { display: grid; grid-template-columns: 72px 1fr; align-items: center; gap: 2rem; padding: 2.25rem 1rem; border-bottom: 1px solid var(--border); cursor: default; transition: background 0.3s, padding 0.3s, border-radius 0.3s; }
 .edu-row:first-child { border-top: 1px solid var(--border); }
 .edu-row:hover { background: var(--surface); padding-left: 2rem; border-radius: var(--r-sm); border-color: transparent; }
 .edu-idx { font-family: var(--font-h); font-size: 2.75rem; font-weight: 700; color: rgba(255,255,255,0.05); line-height: 1; user-select: none; }
@@ -417,7 +417,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .card-bio,.card-role,.card-status,.card-stat { grid-column: span 1; }
   .sec-header { flex-direction: column; gap: 0.4rem; }
   .sec-num { font-size: 3.5rem; }
-  .edu-row { grid-template-columns: 48px 1fr 36px; gap: 1rem; padding: 1.75rem 0.5rem; }
+  .edu-row { grid-template-columns: 48px 1fr; gap: 1rem; padding: 1.75rem 0.5rem; }
   .proj-grid { grid-template-columns: 1fr; }
   .proj-card:first-child { grid-column: span 1; }
   .exp-row { grid-template-columns: 1fr; gap: 1rem; }

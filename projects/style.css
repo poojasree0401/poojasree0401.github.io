@@ -16,13 +16,14 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  background: #f7f7f7;
+  background: #0a0a12;
   font-family: 'Poppins', sans-serif;
+  color: #e0e0f0;
 }
 
 *::selection{
-  background: #2b3dda;
-  color: #fff;
+  background: #00d4ff;
+  color: #0a0a12;
 }
 
 html{
@@ -33,10 +34,11 @@ html::-webkit-scrollbar{
   width: .8rem;
 }
 html::-webkit-scrollbar-track{
-  background: rgb(235, 202, 245);
+  background: #0f0f1c;
 }
 html::-webkit-scrollbar-thumb{
-  background: #420177;
+  background: #00d4ff;
+  border-radius: 4px;
 }
 
 /* navbar starts */
@@ -49,8 +51,10 @@ header{
   justify-content: space-between;
   padding: 1.7rem 10%;
   height: 6.5rem;
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146,161,176,.3);
+  background-color: rgba(10, 10, 18, 0.97);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 section{
   min-height: 100vh;
@@ -58,24 +62,25 @@ section{
 }
 .heading{
   font-size: 3.5rem;
-  color: rgb(32, 32, 32);
+  color: #e8e8f8;
   font-weight: 800;
   text-align: center;
 }
 .heading span{
-  color: rgb(115, 3, 167);
+  color: #00d4ff;
 }
 header .logo{
   font-size: 1.9rem;
   font-weight: 800;
   text-decoration: none;
-  color: #0E2431;
+  color: #e8e8f8;
 }
 header .logo i {
   font-size: 2.2rem;
+  color: #00d4ff;
 }
 header .logo:hover {
-  color: #fc8c05;
+  color: #00d4ff;
 }
 header .navbar ul{
   list-style: none;
@@ -88,15 +93,15 @@ header .navbar li{
 }
 header .navbar ul li a{
   font-size: 1.57rem;
-  color: #0E2431;
+  color: #aaaacc;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.04rem;
 }
 header .navbar ul li a.active,
 header .navbar ul li a:hover{
-  color: #011aff;
-  border-bottom: .2rem solid #011aff;
+  color: #00d4ff;
+  border-bottom: .2rem solid #00d4ff;
   padding: .5rem 0;
 }
 /* navbar ends */
@@ -105,7 +110,7 @@ header .navbar ul li a:hover{
 #menu{
   font-size: 3rem;
   cursor: pointer;
-  color: rgb(24, 2, 63);
+  color: #00d4ff;
   display: none;
 }
 @media(max-width:768px){
@@ -119,7 +124,8 @@ header .navbar ul li a:hover{
     height: 100%;
     text-align: left;
     align-items: flex-start;
-    background-color: #0e0f31;
+    background-color: #0d0d1e;
+    border-left: 1px solid rgba(0, 212, 255, 0.2);
   }
   header .navbar ul{
     flex-flow: column;
@@ -136,15 +142,15 @@ header .navbar ul li a:hover{
     display: block;
     padding: 1rem;
     text-align: left;
-    color: #fff;
+    color: #ccc;
     font-size: 2rem;
   }
   header .navbar ul li a.active,
   header .navbar ul li a:hover{
     padding: 1rem;
-    color: #fff;
+    color: #00d4ff;
     border-radius: .5rem;
-    border-bottom: .5rem solid #011aff;
+    border-bottom: .5rem solid #00d4ff;
   }
   .fa-times{
     transform: rotate(180deg);
@@ -158,15 +164,15 @@ header .navbar ul li a:hover{
 /* work section starts */
 .work{
   /* background: #010124; */
-  background: linear-gradient(to bottom, #010136, #00003a);
+  background: linear-gradient(to bottom, #0d0d1e, #0a0a12);
   margin-top: 5rem;
 }
 .work h2{
-  color: #fff;
+  color: #e8e8f8;
   padding: 1rem;
 }
 .work .heading span{
-  color: rgb(255, 230, 0);
+  color: #00d4ff;
 }
 .work .button-group{
   display: flex;
@@ -181,19 +187,19 @@ header .navbar ul li a:hover{
   outline: none;
   padding: 1rem 2rem;
   background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #aaaacc;
+  border: 1px solid rgba(0, 212, 255, 0.3);
   border-radius: 3px;
   cursor: pointer;
   font-weight: 500;
 }
 .work .button-group .btn:hover{
-  background-color: #fff;
-  color: #000;
+  background-color: #00d4ff;
+  color: #0a0a12;
 }
 .work .button-group .btn.is-checked{
-  background-color: #fff;
-  color: #000;
+  background-color: #00d4ff;
+  color: #0a0a12;
 }
 .work .box-container{
   display: flex;
@@ -204,12 +210,12 @@ header .navbar ul li a:hover{
 .work .box-container .box{
   flex:1 1 30rem;
   border-radius: .5rem;
-  box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.1);
   position: relative;
   overflow:hidden;
   height:30rem;
-  background: #fff;
-  border: none;
+  background: #141424;
 }
 .work .box-container .box img{
   height: 100%;
@@ -221,7 +227,7 @@ header .navbar ul li a:hover{
   width:100%;
   position: absolute;
   top:85%; left:0;
-  background:rgba(255, 255, 255, 0.9);
+  background:rgba(13, 13, 30, 0.95);
   display: flex;
   flex-direction: column;
 }
@@ -233,10 +239,12 @@ header .navbar ul li a:hover{
   height: 4.5rem;
   width: 100%;
   padding-left: 1rem;
-  background: #ffd900;
+  background: rgba(0, 212, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
 }
 .work .box-container .box .content .tag h3{
   font-size: 2rem;
+  color: #00d4ff;
 }
 .work .box-container .box:hover .content{
   top: 25%;
@@ -249,6 +257,7 @@ header .navbar ul li a:hover{
 }
 .work .desc p{
   font-size: 1.5rem;
+  color: #aaaacc;
 }
 .work .desc .btns{
   display: flex;
@@ -262,12 +271,12 @@ header .navbar ul li a:hover{
   padding: 1.5rem 2.5rem;
   border-radius: .5rem;
   font-size: 1.5rem;
-  color: #fff;
-  background: rgb(12, 12, 12);
+  color: #0a0a12;
+  background: #00d4ff;
   margin-right: 2rem;
 }
 .work .desc .btns .btn:hover{
-  background: #310ae0f5;
+  background: #00ffcc;
 }
 
 @media screen and (max-width: 450px) {
@@ -295,9 +304,9 @@ header .navbar ul li a:hover{
   padding: 1.6rem 3rem;
   border-radius: .5em;
   transition: 0.3s;
-  color: #fff;
-  border: 2px solid #fff;
-  box-shadow: 0px 2px 4px rgba(48, 68, 247, .3);
+  color: #00d4ff;
+  border: 2px solid #00d4ff;
+  box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.3);
   text-align: center;
 }
 .backbtn .btn span {
@@ -311,8 +320,8 @@ header .navbar ul li a:hover{
   transition: 0.3s;
 }
 .backbtn .btn:hover{
-  background: #ffffff;
-  color: #000;
+  background: #00d4ff;
+  color: #0a0a12;
 }
 .backbtn .btn:hover i {
   transform: translateX(-8px);
@@ -341,11 +350,12 @@ header .navbar ul li a:hover{
   right: 2rem;
   padding: 1rem 1.5rem;
   font-size: 2rem;
-  background: #ffae00;
-  color: rgb(13, 0, 44);
+  background: #00d4ff;
+  color: #0a0a12;
   border-radius: 5rem;
   transition: 1s linear;
   z-index: 1000;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 #scroll-top.active{
   top: calc(100% - 12rem);

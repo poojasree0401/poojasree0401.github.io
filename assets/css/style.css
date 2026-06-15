@@ -311,6 +311,88 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 #scroll-top:hover { transform: translateY(-3px) !important; }
 
 /* ===== RESPONSIVE ===== */
+
+
+/* ===== HERO GRADIENT MESH (animated) ===== */
+@keyframes mesh-move-1 { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(40px,-30px) scale(1.1);} 66%{transform:translate(-20px,20px) scale(0.95);} }
+@keyframes mesh-move-2 { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(-50px,30px) scale(1.08);} 66%{transform:translate(30px,-20px) scale(0.98);} }
+@keyframes mesh-move-3 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(25px,25px) scale(1.12);} }
+@keyframes count-up { from{opacity:0;transform:scale(0.5);} to{opacity:1;transform:scale(1);} }
+@keyframes glow-text { 0%,100%{text-shadow:0 0 20px rgba(168,85,247,0);} 50%{text-shadow:0 0 60px rgba(168,85,247,0.6),0 0 120px rgba(168,85,247,0.25);} }
+
+/* mesh orbs */
+.hero { isolation: isolate; }
+.hero .mesh-orb {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; filter: blur(80px); z-index: 1;
+}
+.hero .orb1 { width: 650px; height: 650px; background: radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 65%); top:-200px; right:-150px; animation: mesh-move-1 12s ease-in-out infinite; }
+.hero .orb2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 65%); bottom:-100px; left:-100px; animation: mesh-move-2 15s ease-in-out infinite; }
+.hero .orb3 { width: 280px; height: 280px; background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 65%); top:40%; left:30%; animation: mesh-move-3 10s ease-in-out infinite; }
+
+/* gradient hero name */
+.hero-name {
+  background: linear-gradient(135deg, #ffffff 0%, #e2d9f3 40%, #a855f7 80%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* stat-big glow pulse */
+.stat-big { animation: glow-text 3s ease-in-out infinite; }
+
+/* skills section background */
+.sec-skills {
+  position: relative;
+  background: linear-gradient(180deg, transparent 0%, rgba(168,85,247,0.04) 50%, transparent 100%);
+}
+
+/* highlighted bcard on about — gradient border trick */
+.card-bio {
+  background: linear-gradient(var(--bg), var(--bg)) padding-box,
+              linear-gradient(135deg, rgba(168,85,247,0.5), rgba(99,102,241,0.3), rgba(168,85,247,0.5)) border-box;
+  border: 1px solid transparent !important;
+}
+
+/* education divider accent */
+.edu-list { position: relative; }
+.edu-list::before {
+  content: '';
+  position: absolute;
+  left: 36px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border-a), transparent);
+  pointer-events: none;
+}
+
+/* project card header shine effect */
+.proj-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* experience row left accent line */
+.exp-row { border-left: 3px solid transparent; }
+.exp-row:hover { border-left-color: var(--accent); }
+
+/* nav-cta shimmer */
+.nav-cta {
+  position: relative; overflow: hidden;
+}
+.nav-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.nav-cta:hover::after { left: 130%; }
+
 @media (max-width: 1024px) {
   .proj-grid { grid-template-columns: repeat(2, 1fr); }
   .proj-card:first-child { grid-column: span 2; }

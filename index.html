@@ -42,16 +42,17 @@
 <!-- hero section starts -->
 <section class="home" id="home">
     <div id="particles-js"></div>
-
     <div class="content">
-    <h2>Hi There,<br/> I'm PoojaSree <span>Abbavathini</span></h2>
-    <p>i am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
+      <p class="greeting">Hello, World!</p>
+      <h2>I'm <span>PoojaSree</span><br/>Abbavathini</h2>
+      <p class="typing-line">I build <span class="typing-text"></span></p>
+      <div class="hero-btns">
+        <a href="#about" class="btn-primary-hero">About Me <i class="fas fa-arrow-down"></i></a>
+        <a href="#contact" class="btn-outline-hero">Hire Me <i class="fas fa-paper-plane"></i></a>
+      </div>
+      <div class="socials">
         <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/poojasree-abbavathini" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
+          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/poojasree-abbavathini" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           <li><a class="github" aria-label="GitHub" href="https://github.com/poojasree0401" target="_blank"><i class="fab fa-github"></i></a></li>
           <li><a class="email" aria-label="Email" href="mailto:poojasree.abb01@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
         </ul>
@@ -63,123 +64,86 @@
 
 <!-- about section starts -->
 <section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
-
-    <div class="content">
-        <h3>I'm PoojaSree</h3>
-        <span class="tag">AI Engineer &amp; Python Developer</span>
-        
-        <p>I am an AI Engineer based in Hyderabad, India.
-          I hold a B.Tech in Computer Science (Data Science) from Sreyas Institute of Engineering &amp; Technology.
-          I am passionate about building intelligent, production-ready AI systems that solve real-world problems.
-          I specialize in Agentic AI, Retrieval-Augmented Generation (RAG), LangChain, and Python-based automation pipelines.
-          Previously an AI Engineer Intern at Wisdom Square Technologies.
-          I love building multi-agent reasoning systems, document intelligence tools, and end-to-end AI workflows.</p>
-        
-        <div class="box-container">
-            <div class="box">
-              <p><span> email : </span> poojasree.abb01@gmail.com</p>
-              <p><span> place : </span> Hyderabad, India</p>
-            </div>
+    <h2 class="heading"><i class="fas fa-user-astronaut"></i> About <span>Me</span></h2>
+    <div class="about-grid">
+      <div class="avatar-card">
+        <div class="avatar-visual">
+          <i class="fas fa-user-tie"></i>
         </div>
-
-    </div>
+        <span class="avatar-badge"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+        <span class="avatar-badge"><i class="fas fa-brain"></i> AI Engineer</span>
+      </div>
+      <div class="about-content">
+        <h3>PoojaSree Abbavathini</h3>
+        <p class="role"><i class="fas fa-code"></i> AI Engineer &amp; Python Developer</p>
+        <p>I am an AI Engineer based in Hyderabad, India. I hold a B.Tech in Computer Science (Data Science) from Sreyas Institute of Engineering &amp; Technology. I am passionate about building intelligent, production-ready AI systems that solve real-world problems. I specialize in Agentic AI, Retrieval-Augmented Generation (RAG), LangChain, and Python-based automation pipelines. Previously an AI Engineer Intern at Wisdom Square Technologies.</p>
+        <div class="info-chips">
+          <span class="chip"><i class="fas fa-envelope"></i> poojasree.abb01@gmail.com</span>
+          <span class="chip"><i class="fas fa-graduation-cap"></i> B.Tech — CS (Data Science)</span>
+          <span class="chip"><i class="fas fa-briefcase"></i> Open to Opportunities</span>
+        </div>
+      </div>
     </div>
 </section>
 <!-- about section ends -->
 
 <!-- skills section starts -->
 <section class="skills" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills &amp; <span>Abilities</span></h2>
+    <p class="section-subtitle">Technologies and tools I work with</p>
     <div class="container">
-          <div class="row" id="skillsContainer">
-
-            <!-- <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/adobe-xd.png"/>
-                <span>AdobeXD</span>
-              </div>
-            </div> -->
-
-      </div>
-</div>
+      <div class="row" id="skillsContainer"></div>
+    </div>
 </section>
 <!-- skills section ends -->
 
 
 <!-- education section starts -->
 <section class="education" id="education">
-
   <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-    <div class="box">
-        <div class="content">
+  <p class="qoute">"Education is not the learning of facts, but the training of the mind to think."</p>
+  <div class="edu-timeline">
+    <div class="edu-item">
+      <div class="edu-icon"><i class="fas fa-university"></i></div>
+      <div class="edu-card">
         <h3>B.Tech — Computer Science (Data Science)</h3>
         <p>Sreyas Institute of Engineering &amp; Technology, Hyderabad</p>
-        <h4>2021 – 2025 | CGPA: 7.3</h4>
-        </div>
+        <span class="edu-meta"><i class="fas fa-calendar-alt"></i> 2021 – 2025 &nbsp;|&nbsp; CGPA: 7.3</span>
+      </div>
     </div>
-
-    <div class="box">
-        <div class="content">
+    <div class="edu-item">
+      <div class="edu-icon"><i class="fas fa-school"></i></div>
+      <div class="edu-card">
         <h3>Intermediate — MPC</h3>
         <p>Sri Gayatri Junior College, Hyderabad</p>
-        <h4>2019 – 2021 | Score: 84%</h4>
-        </div>
+        <span class="edu-meta"><i class="fas fa-calendar-alt"></i> 2019 – 2021 &nbsp;|&nbsp; Score: 84%</span>
+      </div>
     </div>
-
-    <div class="box">
-        <div class="content">
+    <div class="edu-item">
+      <div class="edu-icon"><i class="fas fa-book"></i></div>
+      <div class="edu-card">
         <h3>Secondary School Certificate (SSC)</h3>
         <p>Globe The School, Hyderabad</p>
-        <h4>2019 | CGPA: 8.5</h4>
-        </div>
+        <span class="edu-meta"><i class="fas fa-calendar-alt"></i> 2019 &nbsp;|&nbsp; CGPA: 8.5</span>
+      </div>
     </div>
-
-</div>
+  </div>
 </section>
 <!-- education section ends -->
 
 
 <!-- work project section starts -->
 <section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-    <!-- <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/portfolio1.PNG" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Portfolio Website</h3>
-        </div>
-        <div class="desc">
-          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/poojasree0401" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-</div>
-
-<div class="viewall">
-  <a href="/projects" class="btn"><span>View All</span>
-    <i class="fas fa-arrow-right"></i>
-</a>
-</div>
-
+  <h2 class="heading"><i class="fas fa-rocket"></i> Projects <span>Made</span></h2>
+  <div class="work-grid" id="workContainer">
+    <div class="empty-state">
+      <i class="fas fa-code-branch"></i>
+      <p>Projects loading... or visit the projects page to see all work.</p>
+    </div>
+  </div>
+  <div class="viewall">
+    <a href="/projects" class="btn"><i class="fas fa-th-large"></i> <span>View All Projects</span></a>
+  </div>
 </section>
 <!-- work project section ends -->
 
@@ -217,41 +181,36 @@
 
 <!-- contact section starts -->
 <section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-  <p style="text-align: center; font-size: 1.7rem; color: #fff; margin-top: 1rem;">Let's build something intelligent together. 🤝</p>
-
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="./assets/images/contact.png" alt="">
-      </div>
+  <h2 class="heading"><i class="fas fa-satellite-dish"></i> Get in <span>Touch</span></h2>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <span class="contact-chip"><i class="fas fa-envelope"></i> poojasree.abb01@gmail.com</span>
+      <span class="contact-chip"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+      <span class="contact-chip"><i class="fab fa-linkedin"></i> LinkedIn Available</span>
+    </div>
     <form id="contact-form">
-      
       <div class="form-group">
         <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Your Name" required>
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="text" name="email" placeholder="Your Email" required>
           <i class='fas fa-envelope'></i>
         </div>
         <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
+          <input type="text" name="phone" placeholder="Phone (optional)">
           <i class='fas fa-phone-alt'></i>
         </div>
         <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
+          <textarea placeholder="Your Message" name="message" required></textarea>
+          <i class="fas fa-comment-dots"></i>
         </div>
-        </div>
+      </div>
       <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
+        <button type="submit">Send Message <i class="fa fa-paper-plane"></i></button>
       </div>
     </form>
-  </div>
   </div>
 </section>
 <!-- contact section ends -->
